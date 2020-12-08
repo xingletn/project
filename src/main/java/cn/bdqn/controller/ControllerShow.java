@@ -49,12 +49,23 @@ public class ControllerShow {
         return "/reception/checkout";
     }
 
-    /**
+   /* *//**
      * 商品分类
      * @return
-     */
+     *//*
     @RequestMapping("/men")
     public String test05(){
+        return "/reception/men";
+    }*/
+
+
+    /**
+     * 男士西装查询
+     * @return
+     */
+    @RequestMapping("/men/Suit")
+    public String test05(){
+
         return "/reception/men";
     }
 
@@ -102,13 +113,5 @@ public class ControllerShow {
     public String test10(){
         return "/reception/order";
     }
-
-
-
-
-
-
-
-
 
 }
