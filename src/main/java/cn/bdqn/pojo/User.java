@@ -1,6 +1,8 @@
 package cn.bdqn.pojo;
 
 
+import java.util.Date;
+
 public class User {
 
   private long userId;
@@ -11,7 +13,7 @@ public class User {
   private long userGender;
   private String phone_Number;
   private String email;
-  private java.sql.Date createDate;
+  private Date createDate;
   private long userRole;
 
 
@@ -87,8 +89,12 @@ public class User {
   }
 
 
-  public java.sql.Date getCreateDate() {
+  public Date getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(Date createDate) {
+    this.createDate = createDate;
   }
 
   public void setCreateDate(java.sql.Date createDate) {

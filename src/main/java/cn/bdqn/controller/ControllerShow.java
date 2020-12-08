@@ -1,7 +1,15 @@
 package cn.bdqn.controller;
 
+/*import cn.bdqn.service.ProductService;*/
+
+import cn.bdqn.pojo.Product;
+import cn.bdqn.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * @author HeChaoZhi(贺朝志)
@@ -12,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/reception")
 public class ControllerShow {
 
+    @Autowired
+    ProductService productService;
     /**
      * 首页
      * @return
@@ -49,7 +59,7 @@ public class ControllerShow {
         return "/reception/checkout";
     }
 
-   /* *//**
+  /*  *//*
      * 商品分类
      * @return
      *//*
@@ -59,13 +69,14 @@ public class ControllerShow {
     }*/
 
 
-    /**
+    /*
      * 男士西装查询
      * @return
      */
     @RequestMapping("/men/Suit")
-    public String test05(){
-
+    public String test05(Model model){
+        List<Product> getsuitList=productService.getsuitList();
+        model.addAttribute("getsuitList",getsuitList);
         return "/reception/men";
     }
 
