@@ -73,9 +73,12 @@ public class ControllerShow {
      * 男士西装查询
      * @return
      */
-    @RequestMapping("/men/Suit")
+    @RequestMapping("/men")
     public String test05(Model model){
         List<Product> getsuitList=productService.getsuitList();
+        for (Product product : getsuitList) {
+            System.out.println(product);
+        }
         model.addAttribute("getsuitList",getsuitList);
         return "/reception/men";
     }

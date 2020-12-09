@@ -1,6 +1,7 @@
 package cn.bdqn.mapper;
 
 import cn.bdqn.pojo.Product;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -8,8 +9,8 @@ import java.util.List;
  * @author wangyaoxing(王耀兴)
  * @create 2020-12-08 16:19
  */
-
+@Component
 public interface ProductMapper {
 
-    List<Product> getsuitList();
+    public List<Product> getsuitList();
 }
