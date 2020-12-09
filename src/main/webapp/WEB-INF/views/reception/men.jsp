@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -122,6 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                </div>
        	   </div>
 					<div class="clearfix"></div>
+				<c:forEach items="${getsuitList}"
 					<ul>
 					  <li class="simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="/reception/single">
@@ -143,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		                      </div>
 		                    </a>
 						</li>
-						<li class="simpleCart_shelfItem">
+						<%--<li class="simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="/reception/single">
 							  <div class="view view-first">
 					   		  <div class="inner_content clearfix">
@@ -242,7 +244,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			                     </div>
 		                      </div>
 							</a>
-						</li>
+						</li>--%>
 					</ul>
 				</div>
 				<script src="../js/cbpViewModeSwitch.js" type="text/javascript"></script>

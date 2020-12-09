@@ -4,6 +4,7 @@ package cn.bdqn.controller;
 
 import cn.bdqn.pojo.Product;
 import cn.bdqn.service.ProductService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -74,7 +75,7 @@ public class ControllerShow {
      * @return
      */
     @RequestMapping("/men")
-    public String test05(Model model){
+    public String test05(@Param("id") String id, Model model){
         List<Product> getsuitList=productService.getsuitList();
         for (Product product : getsuitList) {
             System.out.println(product);
