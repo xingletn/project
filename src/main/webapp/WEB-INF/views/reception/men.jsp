@@ -123,21 +123,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                </div>
        	   </div>
 					<div class="clearfix"></div>
-				<c:forEach items="${getsuitList}"
+
 					<ul>
+                        <c:forEach items="${getsuitList}" var="sult">
 					  <li class="simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="/reception/single">
 							 <div class="view view-first">
 					   		  <div class="inner_content clearfix">
 								<div class="product_image">
-									<div class="mask1"><img src="../images/A_suit/business1.jpg" alt="image" class="img-responsive zoom-img"></div>
+									<div class="mask1"><img src="${pageContext.request.contextPath}/images/${sult.picturePath}" alt="image" class="img-responsive zoom-img"></div>
 									<div class="mask">
 			                       		<div class="info">Quick View</div>
 					                 </div>
 					                 <div class="product_container">
-									   <h4>Lorem 2015</h4>
+									   <%--<h4>Lorem 2015</h4>--%>
+                                         <h4>${sult.productName}</h4>
 									   <p>Dresses</p>
-									   <div class="price mount item_price">$99.00</div>
+									   <div class="price mount item_price">${sult.productprice}</div>
 									   <a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 									 </div>		
 								  </div>
@@ -145,12 +147,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		                      </div>
 		                    </a>
 						</li>
-						<%--<li class="simpleCart_shelfItem">
+                        </c:forEach>
+						<%--
+						<li class="simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="/reception/single">
 							  <div class="view view-first">
 					   		  <div class="inner_content clearfix">
 								<div class="product_image">
-									<div class="mask1"><img src="../images/A_suit/business2.jpg" alt="image" class="img-responsive zoom-img"></div>
+									<div class="mask1"><img src="../images/A_suit/suit_A1.jpg" alt="image" class="img-responsive zoom-img"></div>
 									 <div class="mask">
 			                       		<div class="info">Quick View</div>
 					                  </div>
@@ -165,6 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		                      </div>
 							 </a>
 						</li>
+
 						<li class="last simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="/reception/single">
 								<div class="view view-first">

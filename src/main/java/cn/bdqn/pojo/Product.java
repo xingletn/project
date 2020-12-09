@@ -14,6 +14,26 @@ public class Product {
   private long productPictureId;
   private long productprice;
 
+  private String picturePath;
+
+
+  private ProductPicture productPicture;
+
+  public String getPicturePath() {
+    return picturePath;
+  }
+
+  public void setPicturePath(String picturePath) {
+    this.picturePath = picturePath;
+  }
+
+  public ProductPicture getProductPicture() {
+    return productPicture;
+  }
+
+  public void setProductPicture(ProductPicture productPicture) {
+    this.productPicture = productPicture;
+  }
 
   public long getProductId() {
     return productId;
@@ -104,4 +124,21 @@ public class Product {
     this.productprice = productprice;
   }
 
+  @Override
+  public String toString() {
+    return "Product{" +
+            "productId=" + productId +
+            ", productName='" + productName + '\'' +
+            ", productText='" + productText + '\'' +
+            ", productBrand='" + productBrand + '\'' +
+            ", productlsWishList=" + productlsWishList +
+            ", productlsHaveGoods=" + productlsHaveGoods +
+            ", productCount=" + productCount +
+            ", productClassId=" + productClassId +
+            ", productPictureId=" + productPictureId +
+            ", productprice=" + productprice +
+            ", picturePath='" + picturePath + '\'' +
+            ", productPicture=" + productPicture +
+            '}';
+  }
 }
