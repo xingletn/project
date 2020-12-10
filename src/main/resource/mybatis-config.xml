@@ -4,8 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
+
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="autoMappingBehavior" value="FULL"/>
+        <!--<setting name="logImpl" value="LOG4J" />-->
+        <!--&lt;!&ndash; 设置自动映射 &ndash;&gt;-->
+        <!--<setting name="autoMappingBehavior" value="FULL"/>-->
     </settings>
+
+
 
     <typeAliases>
         <package name="cn.bdqn.pojo"/>

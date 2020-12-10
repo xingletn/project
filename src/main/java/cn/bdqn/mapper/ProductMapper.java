@@ -1,6 +1,7 @@
 package cn.bdqn.mapper;
 
 import cn.bdqn.pojo.Product;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,5 +19,5 @@ public interface ProductMapper {
 
     List<Product> getJewelryList();
 
-    List<Product> getGoodsList(String id);
+    List<Product> getGoodsList(@Param("id") Integer id);
 }

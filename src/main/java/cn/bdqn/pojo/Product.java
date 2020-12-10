@@ -20,6 +20,7 @@ public class Product {
 
   private ProductPicture productPicture;
 
+
   public long getProductpresent() {
     return productpresent;
   }

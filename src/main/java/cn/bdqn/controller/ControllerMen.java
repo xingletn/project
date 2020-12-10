@@ -34,6 +34,7 @@ public class ControllerMen {
         if (id.equals("Watches")) {
             list=productService.getWatchList();
             for (Product product : list) {
+                System.out.println(product);
             }
             model.addAttribute("list",list);
         }
@@ -79,15 +80,24 @@ public class ControllerMen {
         return "/reception/men";
     }
 
+    /**
+     * 商品详细
+     * @param id
+     * @param model
+     * @return
+     */
 
     @RequestMapping("/Men4")
-    public String Men4(@RequestParam("id") String id, Model model){
+    public String Men4(@RequestParam("id") Integer id, Model model){
+        System.out.println(id);
         List<Product> list1=productService.getGoodsList(id);
+        System.out.println(list1);
+        for (Product product : list1) {
+            System.out.println(product);
+        }
         model.addAttribute("list1",list1);
         return "/reception/single";
     }
-
-
 
 
 

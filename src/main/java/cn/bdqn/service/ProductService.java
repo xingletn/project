@@ -29,7 +29,7 @@ public class ProductService {
         return productMapper.getJewelryList();
     }
 
-    public List<Product> getGoodsList(String id) {
+    public List<Product> getGoodsList(Integer id) {
         return productMapper.getGoodsList(id);
     }
 }

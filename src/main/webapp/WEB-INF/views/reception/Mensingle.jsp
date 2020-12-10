@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <%@include file="top.jsp"%>
-<c:forEach items="${a.list}" var="i">
+<c:forEach items="${list1}" var="i">
    <div class="men">
    	<div class="container">
       <div class="col-md-9 single_top">
@@ -103,7 +103,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   		    </div>
 			    <a href="#" class="btn btn-primary btn-normal btn-inline btn_form button item_add item_1" target="_self">Add to cart</a>
 			</div>
-			</c:forEach>
+
 		    <div class="clearfix"> </div>
 		</div>
         <div class="sap_tabs">	
@@ -193,6 +193,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      <div class="clearfix"> </div>
 	</div>
    </div>
+</c:forEach>
   <div class="footer">
    	 <div class="container">
    	 	<div class="newsletter">
