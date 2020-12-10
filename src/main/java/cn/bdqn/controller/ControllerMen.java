@@ -80,12 +80,12 @@ public class ControllerMen {
     }
 
 
-   /* @RequestMapping("/Men4")
+    @RequestMapping("/Men4")
     public String Men4(@RequestParam("id") String id, Model model){
-        List<Product> list=productService.getGoodsList(id);
-        model.addAttribute("list",list);
+        List<Product> list1=productService.getGoodsList(id);
+        model.addAttribute("list1",list1);
         return "/reception/single";
-    }*/
+    }
 
 
 
