@@ -174,10 +174,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="h_nav">
 										<h4>Men</h4>
 										<ul>
-											<li><a href="/reception/Men1?id=Watches">Watches</a></li>
+											<li><a href="/reception/men">Watches</a></li>
 											<%--<li><a href="men.jsp">Watches</a></li>--%>
-											<li><a href="/reception/Men2?id=Accessories">Accessories</a></li>
-											<li><a href="/reception/Men3?id=Suits">Suits</a></li>
+											<li><a href="/reception/men">Accessories</a></li>
+											<li><a href="/reception/men">Suits</a></li>
 											<li><a href="/reception/men">Blazers</a></li>
 											<li><a href="/reception/men">Trousers</a></li>
 											<li><a href="/reception/men">Jeans</a></li>

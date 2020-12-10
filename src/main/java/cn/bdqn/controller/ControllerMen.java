@@ -34,7 +34,7 @@ public class ControllerMen {
         if (id.equals("Watches")) {
             list=productService.getWatchList();
             for (Product product : list) {
-                System.out.println(product);
+               /* System.out.println(product);*/
             }
             model.addAttribute("list",list);
         }
@@ -89,11 +89,11 @@ public class ControllerMen {
 
     @RequestMapping("/Men4")
     public String Men4(@RequestParam("id") Integer id, Model model){
-        System.out.println(id);
+        /*System.out.println(id);*/
         List<Product> list1=productService.getGoodsList(id);
         System.out.println(list1);
         for (Product product : list1) {
-            System.out.println(product);
+           /* System.out.println(product);*/
         }
         model.addAttribute("list1",list1);
         return "/reception/single";
