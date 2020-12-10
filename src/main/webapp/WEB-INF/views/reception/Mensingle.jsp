@@ -36,6 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <%@include file="top.jsp"%>
+<c:forEach items="${a.list}" var="i">
    <div class="men">
    	<div class="container">
       <div class="col-md-9 single_top">
@@ -44,16 +45,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="flexslider">
 					 <ul class="slides">
 						<li data-thumb="images/s1.jpg">
-							<img src="../images/s1.jpg" />
+							<img src="${pageContext.request.contextPath}/images/${i.productPicture}" />
 						</li>
 						<li data-thumb="images/s2.jpg">
-							<img src="../images/s2.jpg" />
+							<img src="${pageContext.request.contextPath}/images/${i.productPicture}" />
 						</li>
 						<li data-thumb="images/s3.jpg">
-							<img src="../images/s3.jpg" />
+							<img src="${pageContext.request.contextPath}/images/${i.productPicture}" />
 						</li>
 						<li data-thumb="images/s4.jpg">
-							<img src="../images/s4.jpg" />
+							<img src="${pageContext.request.contextPath}/images/${i.productPicture}" />
 						</li>
 					 </ul>
 				  </div>
@@ -61,14 +62,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    </div>
 
 		<div class="cont1 span_2_of_a1 simpleCart_shelfItem">
-				<h1>Duis autem</h1>
+				<h1>${i.productName}</h1>
 				<p class="availability">Availability: <span class="color">In stock</span></p>
 			    <div class="price_single">
-				  <span class="reducedfrom">$140.00</span>
-				  <span class="amount item_price actual">$120.00</span><a href="#">click for offer</a>
+				  <span class="reducedfrom">$${i.productprice}</span>
+				  <span class="amount item_price actual">$${i.productpresent}</span><a href="#">click for offer</a>
 				</div>
 				<h2 class="quick">Quick Overview:</h2>
-				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+				<p class="quick_desc">${i.productText}</p>
 			    <div class="wish-list">
 				 	<ul>
 				 		<li class="wish"><a href="#">Add to Wishlist</a></li>

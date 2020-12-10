@@ -2,15 +2,10 @@ package cn.bdqn.controller;
 
 /*import cn.bdqn.service.ProductService;*/
 
-import cn.bdqn.pojo.Product;
 import cn.bdqn.service.ProductService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 /**
  * @author HeChaoZhi(贺朝志)
@@ -60,20 +55,20 @@ public class ControllerShow {
         return "/reception/checkout";
     }
 
-  /*  *//*
-     * 商品分类
+
+     /* 商品分类
      * @return
-     *//*
+     */
     @RequestMapping("/men")
     public String test05(){
         return "/reception/men";
-    }*/
+    }
 
 
-    /*
+   /* *//*
      * 男士西装查询
      * @return
-     */
+     *//*
     @RequestMapping("/men_s")
     public String test05(@Param("id") String id, Model model){
         List<Product> getsuitList=productService.getsuitList();
@@ -82,7 +77,7 @@ public class ControllerShow {
         }
         model.addAttribute("getsuitList",getsuitList);
         return "/reception/men";
-    }
+    }*/
 
     /**
      * 商品信息

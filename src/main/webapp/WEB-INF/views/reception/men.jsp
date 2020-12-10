@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 
 					<ul>
-                        <c:forEach items="${getsuitList}" var="sult">
+                        <c:forEach items="${list}" var="sult">
 					  <li class="simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="/reception/single">
 							 <div class="view view-first">

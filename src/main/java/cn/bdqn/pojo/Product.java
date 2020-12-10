@@ -13,11 +13,20 @@ public class Product {
   private long productClassId;
   private long productPictureId;
   private long productprice;
+  private long productpresent;
 
   private String picturePath;
 
 
   private ProductPicture productPicture;
+
+  public long getProductpresent() {
+    return productpresent;
+  }
+
+  public void setProductpresent(long productpresent) {
+    this.productpresent = productpresent;
+  }
 
   public String getPicturePath() {
     return picturePath;
@@ -137,6 +146,7 @@ public class Product {
             ", productClassId=" + productClassId +
             ", productPictureId=" + productPictureId +
             ", productprice=" + productprice +
+            ", productpresent=" + productpresent +
             ", picturePath='" + picturePath + '\'' +
             ", productPicture=" + productPicture +
             '}';

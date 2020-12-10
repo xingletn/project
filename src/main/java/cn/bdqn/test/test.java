@@ -27,7 +27,7 @@ public class test {
 
     @Test
     public void test01(){
-        List<Product> getsuitList = productService.getsuitList();
+        List<Product> getsuitList = productService.getSuitList();
         for (Product product : getsuitList) {
             System.out.println(product);
         }

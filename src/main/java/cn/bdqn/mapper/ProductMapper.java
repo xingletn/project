@@ -12,5 +12,11 @@ import java.util.List;
 @Component
 public interface ProductMapper {
 
-    public List<Product> getsuitList();
+    public List<Product> getSuitList();
+
+    List<Product> getWatchList();
+
+    List<Product> getJewelryList();
+
+    List<Product> getGoodsList(String id);
 }
