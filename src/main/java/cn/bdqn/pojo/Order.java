@@ -14,6 +14,8 @@ public class Order {
 
   private OrderItem orderItem;
 
+
+
   public OrderItem getOrderItem() {
     return orderItem;
   }
@@ -93,4 +95,18 @@ public class Order {
     this.orderState = orderState;
   }
 
+  public Order() {
+  }
+
+  public Order(long orderId, String orderNumber, long orderPey, String orderUserName, String orderPhone, long orderUserAddress, double orderPrice, long orderState, OrderItem orderItem) {
+    this.orderId = orderId;
+    this.orderNumber = orderNumber;
+    this.orderPey = orderPey;
+    this.orderUserName = orderUserName;
+    this.orderPhone = orderPhone;
+    this.orderUserAddress = orderUserAddress;
+    this.orderPrice = orderPrice;
+    this.orderState = orderState;
+    this.orderItem = orderItem;
+  }
 }

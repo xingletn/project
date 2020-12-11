@@ -23,8 +23,10 @@ public class ControllerOrder {
 
     @RequestMapping("Order1")
     public String Order1(@RequestParam("id")String id, Model model){
-        List<Order> list=productService.getOrderList(id);
-        model.addAttribute("list",list);
+        List<Order> orders=productService.getOrderList(id);
+        for (Order order : orders) {
+        }
+        model.addAttribute("orders",orders);
         return "/reception/order_list";
     }
 
