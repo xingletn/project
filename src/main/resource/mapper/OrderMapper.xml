@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bdqn.mapper.OrderMapper">
+
+    <resultMap type="cn.bdqn.pojo.Order" id="orderRM">
+        <id column="Order_ID" property="orderId"/>
+        <result column="Order_number" property="orderNumber" />
+        <result column="Order_pey" property="orderPey"/>
+        <result column="Order_UserName" property="orderUserName"/>
+        <result column="Order_Phone" property="orderPhone"/>
+        <result column="Order_User_address" property="orderUserAddress"/>
+        <result column="Order_price" property="orderPrice"/>
+        <result column="Order_state" property="orderState"/>
+    </resultMap>
+    <select id="findAll" resultMap="orderRM">
+		select * from order
+	</select>
+</mapper>

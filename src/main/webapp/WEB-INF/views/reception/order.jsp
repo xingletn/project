@@ -1,16 +1,21 @@
-<!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html; charset=gb2312" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <html>
 <head>
- <title>订单处理__湖北民院校园购物网</title>
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ <title>��������__������ԺУ԰������</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+ <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
  <meta name="description" content=""/>
  <meta name="format-detection" content="telephone=no" />
  <meta name=""/>
  
-<link rel="stylesheet" href="tasp.css" />
-<link href="orderconfirm.css" rel="stylesheet" />
-
-<style>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/tasp.css" />
+<link href="${pageContext.request.contextPath}/css/orderconfirm.css" rel="stylesheet" />
+    <%--<link rel="stylesheet" href="D:\JAVA Project\��Ŀ\WristWatchShopping\src\main\webapp\css\tasp.css">
+    <link href="D:\JAVA Project\��Ŀ\WristWatchShopping\src\main\webapp\css\orderconfirm.css" rel="stylesheet">
+--%><style>
 #page{width:auto;}
 #comm-header-inner,#content{width:950px;margin:auto;}
 #logo{padding-top:26px;padding-bottom:12px;}
@@ -29,39 +34,42 @@
 
   <div id="address" class="address" style="margin-top: 20px;" data-spm="2">
 <form name="addrForm" id="addrForm" action="#">
-<h3>确认收货地址
+<h3>ȷ���ջ���ַ
  <span class="manage-address">
- <a href="http://member1.taobao.com/member/fresh/deliver_address.htm" target="_blank" title="管理我的收货地址"
- class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.7">管理收货地址</a>
+<%-- <a href="http://member1.taobao.com/member/fresh/deliver_address.htm" target="_blank" title="�����ҵ��ջ���ַ"
+ class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.7">�����ջ���ַ</a>--%>
  </span>
 </h3>
+
+    <c:forEach items="${orders}" var="o">
 <ul id="address-list" class="address-list">
      <li class="J_Addr J_MakePoint clearfix  J_DefaultAddr "  data-point-url="http://log.mmstat.com/buy.1.20">
  <s class="J_Marker marker"></s>
- <span class="marker-tip">寄送至</span>
+ <span class="marker-tip">������</span>
    <div class="address-info">
- <a href="#" class="J_Modify modify J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.21">修改本地址</a>
+
+ <a href="#" class="J_Modify modify J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.21">�޸ı���ַ</a>
  <input name="address"
  class="J_MakePoint "
  type="radio"
  value="674944241"
  id="addrId_674944241"
- data-point-url="http://log.mmstat.com/buy.1.20"
- ah:params="id=674944241^^stationId=0^^address=湖北民族学院（信息工程学院）  男生宿舍楼5栋102^^postCode=445000^^addressee=朱万雄^^phone=^^mobile=18727717260^^areaCode=422801"
+ <%--data-point-url="http://log.mmstat.com/buy.1.20"
+ ah:params="id=674944241^^stationId=0^^address=��������ѧԺ����Ϣ����ѧԺ��  ��������¥5��102^^postCode=445000^^addressee=������^^phone=^^mobile=18727717260^^areaCode=422801"--%>
   checked="checked" >
  <label for="addrId_674944241" class="user-address">
-         湖北省 恩施土家族苗族自治州 恩施市 湖北民族学院（信息工程学院）  男生宿舍楼235栋2323102 (某某 收) <em>18427717260</em>
+         ${o.orderUserAddress} (${o.orderNumber} ��) <em>${o.orderPhone}</em>
    </label>
- <em class="tip" style="display: none">默认地址</em>
- <a class="J_DefaultHandle set-default J_MakePoint" href="/auction/update_address_selected_status.htm?addrid=674944241" style="display: none" data-point-url="http://log.mmstat.com/buy.1.18">设置为默认收货地址</a>
+ <em class="tip" style="display: none">Ĭ�ϵ�ַ</em>
+ <a class="J_DefaultHandle set-default J_MakePoint" href="/auction/update_address_selected_status.htm?addrid=674944241" style="display: none" data-point-url="http://log.mmstat.com/buy.1.18">����ΪĬ���ջ���ַ</a>
  </div>
      </li>
-     <li class="J_Addr J_MakePoint clearfix"
+<%--     <li class="J_Addr J_MakePoint clearfix"
  data-point-url="http://log.mmstat.com/buy.1.20" >
  <s class="J_Marker marker"></s>
- <span class="marker-tip">寄送至</span>
+ <span class="marker-tip">������</span>
    <div class="address-info">
- <a href="#" class="J_Modify modify J_MakePoint" data-point-url="#">修改本地址</a>
+ <a href="#" class="J_Modify modify J_MakePoint" data-point-url="#">�޸ı���ַ</a>
  <input name="address"
  class="J_MakePoint"
  type="radio"
@@ -71,17 +79,18 @@
  ah:params="#"
  >
  <label for="addrId_594209677" class="user-address">
-       湖北省 恩施土家族苗族自治州 恩施市 某某某 (某某某 收) <em>1342407681</em></label><em class="tip" style="display: none">默认地址</em>
-   <a class="J_DefaultHandle set-default J_MakePoint" style="display: none" data-point-url="#" href="#">设置为默认收货地址</a>
+       ����ʡ ��ʩ���������������� ��ʩ�� ĳĳĳ (ĳĳĳ ��) <em>1342407681</em></label><em class="tip" style="display: none">Ĭ�ϵ�ַ</em>
+   <a class="J_DefaultHandle set-default J_MakePoint" style="display: none" data-point-url="#" href="#">����ΪĬ���ջ���ַ</a>
  </div>
-   </li>
+   </li>--%>
      </ul>
+    </c:forEach>
 <ul id="J_MoreAddress" class="address-list hidden">
      
  </ul>
 
 <div class="address-bar">
- <a href="#" class="new J_MakePoint" id="J_NewAddressBtn">使用新地址</a>
+<%-- <a href="#" class="new J_MakePoint" id="J_NewAddressBtn">ʹ���µ�ַ</a>--%>
  </div>
 
 </form>
@@ -122,10 +131,10 @@
    <input type="hidden"   name="n_country"  value="1" />
    <input type="hidden"  id="defaultId"   name="defaultId"  value="674944241" />
    <input type="hidden"   name="postCode"  value="445000" />
-   <input type="hidden"   name="deliverAddr"  value="湖北民族学院（信息工程学院）  男生宿舍楼5栋102" />
+   <input type="hidden"   name="deliverAddr"  value="��������ѧԺ����Ϣ����ѧԺ��  ��������¥5��102" />
    <input type="hidden"   name="addressId"  value="674944241" />
    <input type="hidden"   name="deliverMobile"  value="18727717260" />
-   <input type="hidden"   name="deliverName"  value="朱万雄" />
+   <input type="hidden"   name="deliverName"  value="������" />
    <input type="hidden"   name="deliverPhone"  value="" />
    <input type="hidden"  id="divisionCode"   name="divisionCode"  value="422801" />
    <input type="hidden"  id="J_CodAction"   name="CodAction"  value="http://delivery.taobao.com/cod/cod_payway.htm" />
@@ -156,16 +165,16 @@
  <input type="hidden" name="cartShareTag" value="" />
  <input type="hidden" name="flushingPictureServiceId" value="" />
            <div>
- <h3 class="dib">确认订单信息</h3>
- <table cellspacing="0" cellpadding="0" class="order-table" id="J_OrderTable" summary="统一下单订单信息区域">
- <caption style="display: none">统一下单订单信息区域</caption>
+ <h3 class="dib">ȷ�϶�����Ϣ</h3>
+ <table cellspacing="0" cellpadding="0" class="order-table" id="J_OrderTable" summary="ͳһ�µ�������Ϣ����">
+ <caption style="display: none">ͳһ�µ�������Ϣ����</caption>
  <thead>
  <tr>
- <th class="s-title">店铺宝贝<hr/></th>
- <th class="s-price">单价(元)<hr/></th>
- <th class="s-amount">数量<hr/></th>
- <th class="s-agio">优惠方式(元)<hr/></th>
- <th class="s-total">小计(元)<hr/></th>
+ <th class="s-title">���̱���<hr/></th>
+ <th class="s-price">����(Ԫ)<hr/></th>
+ <th class="s-amount">����<hr/></th>
+ <th class="s-agio">�Żݷ�ʽ(Ԫ)<hr/></th>
+ <th class="s-total">С��(Ԫ)<hr/></th>
  </tr>
  </thead>
      
@@ -175,10 +184,10 @@
 <tr class="first"><td colspan="5"></td></tr>
 <tr class="shop blue-line">
  <td colspan="3">
-   店铺：<a class="J_ShopName J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.6" href="http://store.taobao.com/shop/view_shop.htm?shop_id=104337282"
- target="_blank" title="淘米魅">淘米魅</a>
-     <span class="seller">卖家：<a href="http://member1.taobao.com/member/user_profile.jhtml?user_id=ac5831c32f47bc9267fcb75b71b5eed6" target="_blank" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.15">淘米魅</a></span>
-     <span class="J_WangWang"  data-nick="淘米魅"   data-display="inline" ></span>
+   <%--<a class="J_ShopName J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.6" href="http://store.taobao.com/shop/view_shop.htm?shop_id=104337282"
+ target="_blank" title="������">������</a>
+     <span class="seller"><a href="http://member1.taobao.com/member/user_profile.jhtml?user_id=ac5831c32f47bc9267fcb75b71b5eed6" target="_blank" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.15">������</a></span>
+     <span class="J_WangWang"  data-nick="������"   data-display="inline" ></span>--%>
     
     </td>
  <td colspan="2" class="promo">
@@ -190,20 +199,20 @@
 </tr>
  <tr class="item" data-lineid="19614514619:31175333266:35612993875" data-pointRate="0">
  <td class="s-title">
-   <a href="#" target="_blank" title="Huawei/华为 G520新款双卡双待安卓系统智能手机4.5寸四核手手机" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
-     <img src="http://img03.taobaocdn.com/bao/uploaded/i3/18670026332876589/T1A4icFbNeXXXXXXXX_!!0-item_pic.jpg_60x60.jpg" class="itempic"><span class="title J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">Huawei/华为 G520新款双卡双待安卓系统智能手机4.5寸四核手手机</span></a>
+   <a href="#" target="_blank" title="Huawei/��Ϊ G520�¿�˫��˫����׿ϵͳ�����ֻ�4.5���ĺ����ֻ�" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
+     <img src="http://img03.taobaocdn.com/bao/uploaded/i3/18670026332876589/T1A4icFbNeXXXXXXXX_!!0-item_pic.jpg_60x60.jpg" class="itempic"><span class="title J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">Huawei/��Ϊ G520�¿�˫��˫����׿ϵͳ�����ֻ�4.5���ĺ����ֻ�</span></a>
 
    <div class="props">
-     <span>机身颜色: 黑 </span>
-   <span>手机套餐: 套餐二 </span>
-   <span>机身内存: 4G </span>
-   <span>版本: 中国大陆 </span>
+     <span>������ɫ: �� </span>
+   <span>�ֻ��ײ�: �ײͶ� </span>
+   <span>�����ڴ�: 4G </span>
+   <span>�汾: �й���½ </span>
          </div>
- <a title="消费者保障服务，卖家承诺商品如实描述" href="#" target="_blank">
+ <a title="�����߱��Ϸ������ҳ�ŵ��Ʒ��ʵ����" href="#" target="_blank">
 <img src="http://img03.taobaocdn.com/tps/i3/T1bnR4XEBhXXcQVo..-14-16.png"/>
 </a>
     <div>
- <span style="color:gray;">卖家承诺72小时内发货</span>
+ <span style="color:gray;">���ҳ�ŵ72Сʱ�ڷ���</span>
  </div>
      </td>
  <td class="s-price">
@@ -218,7 +227,7 @@
  
  </td>
  <td class="s-agio">
-       <div class="J_Promotion promotion" data-point-url="">无优惠</div>
+       <div class="J_Promotion promotion" data-point-url="">���Ż�</div>
    </td>
  <td class="s-total">
    
@@ -243,8 +252,8 @@
  <ul class="wrap">
  <li>
   <div class="field gbook">
-   <label class="label">给卖家留言：</label>
-   <textarea style="width:350px;height:80px;" title="选填：对本次交易的补充说明（建议填写已经和卖家达成一致的说明）" name=""></textarea>
+   <label class="label">���������ԣ�</label>
+   <textarea style="width:350px;height:80px;" title="ѡ��Ա��ν��׵Ĳ���˵����������д�Ѿ������Ҵ��һ�µ�˵����" name=""></textarea>
  </div>
 </li>
    </ul>
@@ -253,7 +262,7 @@
 
  <div class="shoparea">
  <ul class="dib-wrap">
- <li class="dib title">店铺优惠：</li>
+ <li class="dib title">�����Żݣ�</li>
  <li class="dib sel"><div class="J_ShopPromo J_Promotion promotion clearfix" data-point-url="http://log.mmstat.com/buy.1.16"></div></li>
  <li class="dib fee">  <span class='price '>
  -<em class="style-normal-bold-black J_ShopPromo_Result"  >0.00</em>
@@ -266,7 +275,7 @@
 
    <div class="farearea">
  <ul class="dib-wrap J_farearea">
- <li class="dib title">运送方式：</li>
+ <li class="dib title">���ͷ�ʽ��</li>
  <li class="dib sel" data-point-url="http://log.mmstat.com/jsclick?cache=*&tyxd=wlysfs">
  <input type="hidden" name="1704508670:2|actualPaidFee" value="0" class="J_ActualPaidFee" />
  <input type="hidden" name="1704508670:2|codAllowMultiple" value="true"/>
@@ -275,16 +284,16 @@
  <input type="hidden" name="1704508670:2|codPostFee" value="0" class="J_CodPostFee"/>
    <select name="1704508670:2|post" class="J_Fare">
      <option data-fare="1500" value=" 2 " data-codServiceType="2" data-level=""  selected="selected"  >
- 快递 15.00元 
+ ��� 15.00Ԫ 
  </option>
        <option data-fare="2500" value=" 7 " data-codServiceType="7" data-level=""  >
- EMS 25.00元 
+ EMS 25.00Ԫ 
  </option>
        <option data-fare="1500" value=" 1 " data-codServiceType="1" data-level=""  >
- 平邮 15.00元 
+ ƽ�� 15.00Ԫ 
  </option>
      </select>
-   <em tabindex="0" class="J_FareFree" style="display: none">免邮费</em>
+   <em tabindex="0" class="J_FareFree" style="display: none">���ʷ�</em>
      </li>
  <li class="dib fee">  <span class='price '>
  <em class="style-normal-bold-red J_FareSum"  >30.00</em>
@@ -294,8 +303,8 @@
  </div>
    <div class="extra-area">
  <ul class="dib-wrap">
- <li class="dib title">发货时间：</li>
- <li class="dib content">卖家承诺订单在买家付款后，72小时内<a href="#">发货</a></li>
+ <li class="dib title">����ʱ�䣺</li>
+ <li class="dib content">���ҳ�ŵ��������Ҹ����72Сʱ��<a href="#">����</a></li>
  </ul>
  </div>
    
@@ -306,7 +315,7 @@
 </tr>
 
 <tr class="shop-total blue-line">
- <td colspan="5">店铺合计(<span class="J_Exclude" style="display: none">不</span>含运费<span class="J_ServiceText" style="display: none">，服务费</span>)：
+ <td colspan="5">���̺ϼ�(<span class="J_Exclude" style="display: none">��</span>���˷�<span class="J_ServiceText" style="display: none">�������</span>)��
    <span class='price g_price '>
  <span>&yen;</span><em class="style-middle-bold-red J_ShopTotal"  >630.00</em>
   </span>
@@ -327,33 +336,33 @@
  <div class="bd">
  <div class="point-in">
    
-   <em class="t">实付款：</em>  <span class='price g_price '>
+   <em class="t">ʵ���</em>  <span class='price g_price '>
  <span>&yen;</span><em class="style-large-bold-red"  id="J_ActualFee"  >630.00</em>
   </span>
 </div>
 
   <ul >
- <li><em>寄送至:</em><span id="J_AddrConfirm" style="word-break: break-all;">
-   湖北省 恩施土家族苗族自治州 恩施市 湖北民族学院（信息工程学院）  男生宿舍楼235栋1234202
+ <li><em>������:</em><span id="J_AddrConfirm" style="word-break: break-all;">
+   ����ʡ ��ʩ���������������� ��ʩ�� ��������ѧԺ����Ϣ����ѧԺ��  ��������¥235��1234202
    </span></li>
- <li><em>收货人:</em><span id="J_AddrNameConfirm">某某某 18124317260 </span></li>
+ <li><em>�ջ���:</em><span id="J_AddrNameConfirm">ĳĳĳ 18124317260 </span></li>
  </ul>
      </div>
  </div>
-         <a href="#"
+         <a href="/reception/checkout"
  class="back J_MakePoint" target="_top"
- data-point-url="">返回购物车</a>
-       <a id="J_Go" class=" btn-go"  data-point-url=""  tabindex="0" title="点击此按钮，提交订单。">提交订单<b class="dpl-button"></b></a>
+ data-point-url="">���ع��ﳵ</a>
+       <a id="J_Go" class=" btn-go"  data-point-url=""  tabindex="0" title="����˰�ť���ύ������">�ύ����<b class="dpl-button"></b></a>
   </div>
  </div>
 
  <div class="J_confirmError confirm-error">
- <div class="msg J_shopPointError" style="display: none;"><p class="error">积分点数必须为大于0的整数</p></div>
+ <div class="msg J_shopPointError" style="display: none;"><p class="error">���ֵ�������Ϊ����0������</p></div>
  </div>
 
 
  <div class="msg" style="clear: both;">
- <p class="tips naked" style="float:right;padding-right: 0">若价格变动，请在提交订单后联系卖家改价，并查看已买到的宝贝</p>
+ <p class="tips naked" style="float:right;padding-right: 0">���۸�䶯�������ύ��������ϵ���Ҹļۣ����鿴���򵽵ı���</p>
  </div>
  </div>
  </td>
@@ -370,10 +379,11 @@
 </form>
 </div>
 
+
 <div id="footer"></div>
 </div>
 <div style="text-align:center;">
-<p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+<%--<p>��Դ:<a href="http://www.mycodes.net/" target="_blank">Դ��֮��</a></p>--%>
 </div>
 </body>
 </html>

@@ -12,6 +12,8 @@
 <html>
 <head>
     <title>嘿嘿</title>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 </head>
 <body>
 
