@@ -24,8 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="../js/jquery.easydropdown.js"></script>
 <script src="../js/simpleCart.min.js"> </script>
 </head>
-
 <body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@include file="top.jsp"%>--%>
 <div class="banner">
 	<div class="container">
@@ -37,10 +37,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h4><p>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><img src="../images/bag.png" alt=""/><div class="clearfix"> </div></h4>
 				</a></div>
 
-                    <div class="box_11"><a href="/reception/order">
+                <c:forEach items="${orders}" var="o">
+                    <div class="box_11"><a href="/reception/order?id=${o.}">
                         <h4><p>Order: <span class="simpleCart_total"></span> (<span id="simpleCart_order" class="simpleCart_quantity"></span> items)</p><img src="../images/bag.png" alt=""/><div class="clearfix"> </div></h4>
                     </a></div>
-
+                </c:forEach>
 				<p class="empty"><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 				<div class="clearfix"> </div>
 				</a>
