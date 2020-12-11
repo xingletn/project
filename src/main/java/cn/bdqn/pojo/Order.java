@@ -12,6 +12,15 @@ public class Order {
   private double orderPrice;
   private long orderState;
 
+  private OrderItem orderItem;
+
+  public OrderItem getOrderItem() {
+    return orderItem;
+  }
+
+  public void setOrderItem(OrderItem orderItem) {
+    this.orderItem = orderItem;
+  }
 
   public long getOrderId() {
     return orderId;

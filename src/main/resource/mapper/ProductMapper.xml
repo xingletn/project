@@ -38,5 +38,10 @@
         AND Product_PictureID=#{id}
     </select>
 
+    <select id="getOrderList" resultType="cn.bdqn.pojo.Order">
 
+      SELECT o.*,oi.* FROM `order` o,`order_item` oi
+        WHERE o.`Order_ID`=#{id} AND o.`Order_ID`=oi.`Order_id`
+
+    </select>
 </mapper>

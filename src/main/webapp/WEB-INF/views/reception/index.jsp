@@ -31,17 +31,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="header_top">
 			<div class="header_top_left">
-				<%--<div class="box_11"><a href="checkout.jsp">--%>
-				<%--<div class="box_11"><a href="/reception/checkout">
+				<div class="box_11"><a href="/reception/checkout">
 					<h4><p>Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</p><img src="../images/bag.png" alt=""/><div class="clearfix"> </div></h4>
-				</a></div>--%>
-
+				</a></div>
 
                     <div class="box_11"><a href="/reception/order">
                         <h4><p>Order: <span class="simpleCart_total"></span> (<span id="simpleCart_order" class="simpleCart_quantity"></span> items)</p><img src="../images/bag.png" alt=""/><div class="clearfix"> </div></h4>
                     </a></div>
+
 				<p class="empty"><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 				<div class="clearfix"> </div>
+				</a>
 			</div>
 			<div class="header_top_right">
 				<div class="lang_list">

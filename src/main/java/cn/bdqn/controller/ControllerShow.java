@@ -121,7 +121,7 @@ public class ControllerShow {
      */
     @RequestMapping("/order")
     public String test10(){
-        return "/reception/order";
+        return "/reception/order_list";
     }
 
 }

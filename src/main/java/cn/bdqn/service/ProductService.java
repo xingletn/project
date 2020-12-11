@@ -1,6 +1,7 @@
 package cn.bdqn.service;
 
 import cn.bdqn.mapper.ProductMapper;
+import cn.bdqn.pojo.Order;
 import cn.bdqn.pojo.Product;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,9 @@ public class ProductService {
 
     public List<Product> getGoodsList(Integer id) {
         return productMapper.getGoodsList(id);
+    }
+
+    public List<Order> getOrderList(String id) {
+        return productMapper.getOrderList(id);
     }
 }
