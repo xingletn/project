@@ -22,5 +22,5 @@ public interface ProductMapper {
 
     List<Product> getGoodsList(@Param("id") Integer id);
 
-    List<Order> getOrderList(String id);
+    List<Order> getOrderList(Integer id);
 }

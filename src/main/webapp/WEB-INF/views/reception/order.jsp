@@ -54,12 +54,18 @@
  type="radio"
  value="674944241"
  id="addrId_674944241"
- <%--data-point-url="http://log.mmstat.com/buy.1.20"
- ah:params="id=674944241^^stationId=0^^address=湖北民族学院（信息工程学院）  男生宿舍楼5栋102^^postCode=445000^^addressee=朱万雄^^phone=^^mobile=18727717260^^areaCode=422801"--%>
+ data-point-url="http://log.mmstat.com/buy.1.20"
+ ah:params="id=674944241^^stationId=0^^address=湖北民族学院（信息工程学院）  男生宿舍楼5栋102^^postCode=445000^^addressee=朱万雄^^phone=^^mobile=18727717260^^areaCode=422801"
   checked="checked" >
- <label for="addrId_674944241" class="user-address">
-         ${o.orderUserAddress} (${o.orderNumber} 收) <em>${o.orderPhone}</em>
+ <label>
+         ${o.orderUserAddress}, (${o.orderUserName} 收), <em>${o.orderPhone}</em>
    </label>
+       <label>
+               ${o.orderUserAddress1}, (${o.orderUserName} 收), <em>${o.orderPhone}</em>
+       </label>
+      <%-- <label for="addrId_674944241" class="user-address">
+               ${o.orderUserAddress1}, (${o.orderUserName} 收), <em>${o.orderPhone}</em>
+       </label>--%>
  <em class="tip" style="display: none">默认地址</em>
  <a class="J_DefaultHandle set-default J_MakePoint" href="/auction/update_address_selected_status.htm?addrid=674944241" style="display: none" data-point-url="http://log.mmstat.com/buy.1.18">设置为默认收货地址</a>
  </div>
@@ -275,7 +281,7 @@
 
    <div class="farearea">
  <ul class="dib-wrap J_farearea">
- <li class="dib title">运送方式：</li>
+ <%--<li class="dib title">运送方式：</li>--%>
  <li class="dib sel" data-point-url="http://log.mmstat.com/jsclick?cache=*&tyxd=wlysfs">
  <input type="hidden" name="1704508670:2|actualPaidFee" value="0" class="J_ActualPaidFee" />
  <input type="hidden" name="1704508670:2|codAllowMultiple" value="true"/>
@@ -283,7 +289,7 @@
  <input type="hidden" name="1704508670:2|codServiceFeeRate" value="" class="J_CodServiceFeeRate"/>
  <input type="hidden" name="1704508670:2|codPostFee" value="0" class="J_CodPostFee"/>
    <select name="1704508670:2|post" class="J_Fare">
-     <option data-fare="1500" value=" 2 " data-codServiceType="2" data-level=""  selected="selected"  >
+    <%-- <option data-fare="1500" value=" 2 " data-codServiceType="2" data-level=""  selected="selected"  >
  快递 15.00元 
  </option>
        <option data-fare="2500" value=" 7 " data-codServiceType="7" data-level=""  >
@@ -291,7 +297,7 @@
  </option>
        <option data-fare="1500" value=" 1 " data-codServiceType="1" data-level=""  >
  平邮 15.00元 
- </option>
+ </option>--%>
      </select>
    <em tabindex="0" class="J_FareFree" style="display: none">免邮费</em>
      </li>

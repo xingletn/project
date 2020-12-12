@@ -21,12 +21,12 @@ public class ControllerOrder {
     @Autowired
     ProductService productService;
 
-    @RequestMapping("Order1")
-    public String Order1(@RequestParam("id")String id, Model model){
-     /*   List<Order> list=productService.getOrderList(id);
-        model.addAttribute("list",list);*/
+    @RequestMapping("/Order1")
+    public String Order1(@RequestParam("id")Integer id, Model model){
+
         List<Order> orders=productService.getOrderList(id);
         for (Order order : orders) {
+            System.out.println(order);
         }
         model.addAttribute("orders",orders);
         return "reception/order";
@@ -34,15 +34,14 @@ public class ControllerOrder {
 
     /*
 
-    */
-/**1.查询所有订单信息*//*
+//    */
+///*1.查询所有订单信息
+//**/
+//    @RequestMapping("/Order1")
+//    public String orderList(){
+//        return"order";
+//    }
 
-    @RequestMapping("/orderList")
-    public String orderList(){
-        return"order_list";
-    }
-
-    */
 /**2.根据id删除订单信息,所以要添加一个参数接受id*//*
 
     @RequestMapping("/orderDelete")

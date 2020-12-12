@@ -8,7 +8,8 @@ public class Order {
   private long orderPey;
   private String orderUserName;
   private String orderPhone;
-  private long orderUserAddress;
+  private String orderUserAddress;
+  private String orderUserAddress1;
   private double orderPrice;
   private long orderState;
 
@@ -69,16 +70,23 @@ public class Order {
   }
 
 
-  public long getOrderUserAddress() {
-    return orderUserAddress;
-  }
+    public String getOrderUserAddress() {
+        return orderUserAddress;
+    }
 
-  public void setOrderUserAddress(long orderUserAddress) {
-    this.orderUserAddress = orderUserAddress;
-  }
+    public void setOrderUserAddress(String orderUserAddress) {
+        this.orderUserAddress = orderUserAddress;
+    }
 
+    public String getOrderUserAddress1() {
+        return orderUserAddress1;
+    }
 
-  public double getOrderPrice() {
+    public void setOrderUserAddress1(String orderUserAddress1) {
+        this.orderUserAddress1 = orderUserAddress1;
+    }
+
+    public double getOrderPrice() {
     return orderPrice;
   }
 
@@ -98,15 +106,19 @@ public class Order {
   public Order() {
   }
 
-  public Order(long orderId, String orderNumber, long orderPey, String orderUserName, String orderPhone, long orderUserAddress, double orderPrice, long orderState, OrderItem orderItem) {
-    this.orderId = orderId;
-    this.orderNumber = orderNumber;
-    this.orderPey = orderPey;
-    this.orderUserName = orderUserName;
-    this.orderPhone = orderPhone;
-    this.orderUserAddress = orderUserAddress;
-    this.orderPrice = orderPrice;
-    this.orderState = orderState;
-    this.orderItem = orderItem;
-  }
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", orderNumber='" + orderNumber + '\'' +
+                ", orderPey=" + orderPey +
+                ", orderUserName='" + orderUserName + '\'' +
+                ", orderPhone='" + orderPhone + '\'' +
+                ", orderUserAddress='" + orderUserAddress + '\'' +
+                ", orderUserAddress1='" + orderUserAddress1 + '\'' +
+                ", orderPrice=" + orderPrice +
+                ", orderState=" + orderState +
+                ", orderItem=" + orderItem +
+                '}';
+    }
 }

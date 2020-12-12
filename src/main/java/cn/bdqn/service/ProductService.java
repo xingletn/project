@@ -34,7 +34,7 @@ public class ProductService {
         return productMapper.getGoodsList(id);
     }
 
-    public List<Order> getOrderList(String id) {
+    public List<Order> getOrderList(Integer id) {
         return productMapper.getOrderList(id);
     }
 }
