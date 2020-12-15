@@ -206,16 +206,21 @@
    </div>
  </td>
 </tr>
+<c:forEach items="${products}" var="p">
  <tr class="item" data-lineid="19614514619:31175333266:35612993875" data-pointRate="0">
  <td class="s-title">
-   <a href="#" target="_blank" title="Huawei/华为 G520新款双卡双待安卓系统智能手机4.5寸四核手手机" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
+  <%-- <a href="#" target="_blank" title="Huawei/华为 G520新款双卡双待安卓系统智能手机4.5寸四核手手机" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
      <img src="http://img03.taobaocdn.com/bao/uploaded/i3/18670026332876589/T1A4icFbNeXXXXXXXX_!!0-item_pic.jpg_60x60.jpg" class="itempic"><span class="title J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">Huawei/华为 G520新款双卡双待安卓系统智能手机4.5寸四核手手机</span></a>
+--%>
 
-   <div class="props">
-     <span>机身颜色: 黑 </span>
+      <a href="#" target="_blank" title="${p.productName}" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
+          <img src="${p.picturePath}" class="itempic"><span class="title J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">${p.productName}</span></a>
+
+      <div class="props">
+    <%-- <span>机身颜色: 黑 </span>
    <span>手机套餐: 套餐二 </span>
    <span>机身内存: 4G </span>
-   <span>版本: 中国大陆 </span>
+   <span>版本: 中国大陆 </span>--%>
          </div>
  <a title="消费者保障服务，卖家承诺商品如实描述" href="#" target="_blank">
 <img src="http://img03.taobaocdn.com/tps/i3/T1bnR4XEBhXXcQVo..-14-16.png"/>
@@ -246,6 +251,7 @@
     <input id="furniture_service_list_b_47285539868" type="hidden" name="furniture_service_list_b_47285539868"/>
  </td>
 </tr>
+</c:forEach>
 
 
 

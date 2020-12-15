@@ -22,4 +22,5 @@ public interface ProductMapper {
     List<Product> getGoodsList(@Param("id") Integer id);
 
 
+
 }

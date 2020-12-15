@@ -1,5 +1,6 @@
 package cn.bdqn.mapper;
 
+import cn.bdqn.pojo.Product;
 import cn.bdqn.pojo.User;
 import org.springframework.stereotype.Component;
 
@@ -27,4 +28,6 @@ public interface OrderMapper {
 */
 
     List<User> getOrderList(Integer id);
+
+    List<Product> getProduct(Integer pid);
 }

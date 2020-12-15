@@ -41,4 +41,8 @@ public class ProductService {
     public List<User> getOrderList(Integer id) {
         return mapper.getOrderList(id);
     }
+
+    public List<Product> getProduct(Integer pid) {
+        return mapper.getProduct(pid);
+    }
 }

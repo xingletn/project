@@ -1,5 +1,6 @@
 package cn.bdqn.controller;
 
+import cn.bdqn.pojo.Product;
 import cn.bdqn.pojo.User;
 import cn.bdqn.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,15 @@ public class ControllerOrder {
         return "reception/order";
     }
 
-
-
-
+    @RequestMapping("/Order2")
+    public String Order2(@RequestParam("pid")Integer pid,Model model){
+        List<Product> products=productService.getProduct(pid);
+        for (Product product : products) {
+            System.out.println(product);
+        }
+        model.addAttribute("products",products);
+        return "reception/order";
+    }
 
     /*
 

@@ -38,6 +38,12 @@
         FROM `user` u,`order` o
         WHERE u.`userId`=o.`userId`
         AND u.`userId`=#{id}
-
     </select>
+
+   <select id="getProduct" resultType="Product">
+       select * from product
+       where productId=1
+   </select>
+
+
 </mapper>
