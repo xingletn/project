@@ -8,13 +8,36 @@
         <id property="orderId" column="Order_ID"></id>
         <result property="orderNumber" column="Order_number"></result>
         <result property="orderPey" column="Order_pey"></result>
-        <result property="orderUserName" column="Order_UserName"></result>
-        <result property="orderPhone" column="Order_Phone"></result>
-        <result property="orderUserAddress" column="Order_User_address"></result>
         <result property="orderPrice" column="Order_price"></result>
         <result property="orderState" column="Order_state"></result>
     </resultMap>
     <select id="findAll" resultMap="OrderList">
 		select * from order
 	</select>
+
+    <resultMap id="OrderList1" type="User">
+
+
+        <association property="order" javaType="cn.bdqn.pojo.Order" >
+            <id property="orderId" column="Order_ID"></id>
+            <result property="orderNumber" column="Order_number"></result>
+            <result property="orderPey" column="Order_pey"></result>
+            <result property="orderPrice" column="Order_price"></result>
+            <result property="orderState" column="Order_state"></result>
+        </association>
+    </resultMap>
+
+
+    <select id="getOrderList" resultMap="OrderList1">
+
+        <!--SELECT o.*,oi.* FROM `order` o,`order_item` oi-->
+        <!--WHERE o.`Order_ID`=#{id} AND o.`Order_ID`=oi.`Order_id`-->
+        <!--&lt;!&ndash; select * from order&ndash;&gt;-->
+
+        SELECT u.`userAddress`,u.`userAddress2`,u.`phone Number`,u.`userName`,o.*
+        FROM `user` u,`order` o
+        WHERE u.`userId`=o.`userId`
+        AND u.`userId`=#{id}
+
+    </select>
 </mapper>

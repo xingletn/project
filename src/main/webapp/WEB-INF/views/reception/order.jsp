@@ -48,7 +48,7 @@
  <span class="marker-tip">寄送至</span>
    <div class="address-info">
 
- <a href="#" class="J_Modify modify J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.21">修改本地址</a>
+<%-- <a href="#" class="J_Modify modify J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.21">修改本地址</a>
  <input name="address"
  class="J_MakePoint "
  type="radio"
@@ -57,15 +57,18 @@
  data-point-url="http://log.mmstat.com/buy.1.20"
  ah:params="id=674944241^^stationId=0^^address=湖北民族学院（信息工程学院）  男生宿舍楼5栋102^^postCode=445000^^addressee=朱万雄^^phone=^^mobile=18727717260^^areaCode=422801"
   checked="checked" >
- <label>
-         ${o.orderUserAddress}, (${o.orderUserName} 收), <em>${o.orderPhone}</em>
+ <label>--%>
+     <%--    ${o.orderUserAddress}, (${o.orderUserName} 收), <em>${o.orderPhone}</em>
    </label>
        <label>
                ${o.orderUserAddress1}, (${o.orderUserName} 收), <em>${o.orderPhone}</em>
-       </label>
+       </label>--%>
       <%-- <label for="addrId_674944241" class="user-address">
                ${o.orderUserAddress1}, (${o.orderUserName} 收), <em>${o.orderPhone}</em>
        </label>--%>
+
+    <input name="address" type="radio" value="${o.userAddress}">${o.userAddress}<br/>
+    <input name="address" type="radio" value="${o.userAddress2}">${o.userAddress2}
  <em class="tip" style="display: none">默认地址</em>
  <a class="J_DefaultHandle set-default J_MakePoint" href="/auction/update_address_selected_status.htm?addrid=674944241" style="display: none" data-point-url="http://log.mmstat.com/buy.1.18">设置为默认收货地址</a>
  </div>

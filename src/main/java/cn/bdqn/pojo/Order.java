@@ -3,33 +3,40 @@ package cn.bdqn.pojo;
 
 public class Order {
 
-  private long orderId;
+  private int orderId;
   private String orderNumber;
-  private long orderPey;
-  private String orderUserName;
-  private String orderPhone;
-  private String orderUserAddress;
-  private String orderUserAddress1;
+  private int orderPey;
+  private int userId;
   private double orderPrice;
-  private long orderState;
+  private int orderState;
+  private User user;
 
-  private OrderItem orderItem;
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderId=" + orderId +
+                ", orderNumber='" + orderNumber + '\'' +
+                ", orderPey=" + orderPey +
+                ", userId=" + userId +
+                ", orderPrice=" + orderPrice +
+                ", orderState=" + orderState +
+                ", user=" + user +
+                '}';
+    }
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-  public OrderItem getOrderItem() {
-    return orderItem;
-  }
-
-  public void setOrderItem(OrderItem orderItem) {
-    this.orderItem = orderItem;
-  }
-
-  public long getOrderId() {
+    public int getOrderId() {
     return orderId;
   }
 
-  public void setOrderId(long orderId) {
+  public void setOrderId(int orderId) {
     this.orderId = orderId;
   }
 
@@ -43,50 +50,25 @@ public class Order {
   }
 
 
-  public long getOrderPey() {
+  public int getOrderPey() {
     return orderPey;
   }
 
-  public void setOrderPey(long orderPey) {
+  public void setOrderPey(int orderPey) {
     this.orderPey = orderPey;
   }
 
 
-  public String getOrderUserName() {
-    return orderUserName;
+  public int getUserId() {
+    return userId;
   }
 
-  public void setOrderUserName(String orderUserName) {
-    this.orderUserName = orderUserName;
-  }
-
-
-  public String getOrderPhone() {
-    return orderPhone;
-  }
-
-  public void setOrderPhone(String orderPhone) {
-    this.orderPhone = orderPhone;
+  public void setUserId(int userId) {
+    this.userId = userId;
   }
 
 
-    public String getOrderUserAddress() {
-        return orderUserAddress;
-    }
-
-    public void setOrderUserAddress(String orderUserAddress) {
-        this.orderUserAddress = orderUserAddress;
-    }
-
-    public String getOrderUserAddress1() {
-        return orderUserAddress1;
-    }
-
-    public void setOrderUserAddress1(String orderUserAddress1) {
-        this.orderUserAddress1 = orderUserAddress1;
-    }
-
-    public double getOrderPrice() {
+  public double getOrderPrice() {
     return orderPrice;
   }
 
@@ -95,30 +77,12 @@ public class Order {
   }
 
 
-  public long getOrderState() {
+  public int getOrderState() {
     return orderState;
   }
 
-  public void setOrderState(long orderState) {
+  public void setOrderState(int orderState) {
     this.orderState = orderState;
   }
 
-  public Order() {
-  }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId=" + orderId +
-                ", orderNumber='" + orderNumber + '\'' +
-                ", orderPey=" + orderPey +
-                ", orderUserName='" + orderUserName + '\'' +
-                ", orderPhone='" + orderPhone + '\'' +
-                ", orderUserAddress='" + orderUserAddress + '\'' +
-                ", orderUserAddress1='" + orderUserAddress1 + '\'' +
-                ", orderPrice=" + orderPrice +
-                ", orderState=" + orderState +
-                ", orderItem=" + orderItem +
-                '}';
-    }
 }

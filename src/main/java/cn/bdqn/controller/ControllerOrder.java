@@ -1,6 +1,6 @@
 package cn.bdqn.controller;
 
-import cn.bdqn.pojo.Order;
+import cn.bdqn.pojo.User;
 import cn.bdqn.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,13 +24,17 @@ public class ControllerOrder {
     @RequestMapping("/Order1")
     public String Order1(@RequestParam("id")Integer id, Model model){
 
-        List<Order> orders=productService.getOrderList(id);
-        for (Order order : orders) {
+        List<User> orders=productService.getOrderList(id);
+        for (User order : orders) {
             System.out.println(order);
         }
         model.addAttribute("orders",orders);
         return "reception/order";
     }
+
+
+
+
 
     /*
 

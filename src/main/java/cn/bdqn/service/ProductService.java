@@ -1,8 +1,10 @@
 package cn.bdqn.service;
 
+import cn.bdqn.mapper.OrderMapper;
 import cn.bdqn.mapper.ProductMapper;
-import cn.bdqn.pojo.Order;
 import cn.bdqn.pojo.Product;
+import cn.bdqn.pojo.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,6 +19,8 @@ import java.util.List;
 public class ProductService {
     @Resource
     ProductMapper productMapper;
+    @Autowired
+    OrderMapper mapper;
 
     public List<Product> getSuitList() {
         return productMapper.getSuitList();
@@ -34,7 +38,7 @@ public class ProductService {
         return productMapper.getGoodsList(id);
     }
 
-    public List<Order> getOrderList(Integer id) {
-        return productMapper.getOrderList(id);
+    public List<User> getOrderList(Integer id) {
+        return mapper.getOrderList(id);
     }
 }

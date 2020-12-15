@@ -1,9 +1,15 @@
 package cn.bdqn.mapper;
 
+import cn.bdqn.pojo.User;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
 /**
  * @author wangyaoxing(王耀兴)
  * @create 2020-12-11 12:18
  */
+@Component
 public interface OrderMapper {
 
   /*  *//** 1.查询所有订单信息*//*
@@ -16,5 +22,9 @@ public interface OrderMapper {
     public Order findById(Integer id);
     *//** 5.根据id修改订单信息*//*
     public void updateById(Order order);
+
+
 */
+
+    List<User> getOrderList(Integer id);
 }

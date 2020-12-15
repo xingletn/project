@@ -5,23 +5,52 @@ import java.util.Date;
 
 public class User {
 
-  private long userId;
+  private int userId;
   private String code;
   private String userCode;
   private String userName;
   private String userPassword;
-  private long userGender;
+  private int userGender;
   private String phone_Number;
   private String email;
   private Date createDate;
-  private long userRole;
+  private int userRole;
+  private String userAddress;
+  private String userAddress2;
+  private Order order;
 
+  public Order getOrder() {
+    return order;
+  }
 
-  public long getUserId() {
+  public void setOrder(Order order) {
+    this.order = order;
+  }
+
+  @Override
+  public String toString() {
+    return "User{" +
+            "userId=" + userId +
+            ", code='" + code + '\'' +
+            ", userCode='" + userCode + '\'' +
+            ", userName='" + userName + '\'' +
+            ", userPassword='" + userPassword + '\'' +
+            ", userGender=" + userGender +
+            ", phone_Number='" + phone_Number + '\'' +
+            ", email='" + email + '\'' +
+            ", createDate=" + createDate +
+            ", userRole=" + userRole +
+            ", userAddress='" + userAddress + '\'' +
+            ", userAddress2='" + userAddress2 + '\'' +
+            ", order=" + order +
+            '}';
+  }
+
+  public int getUserId() {
     return userId;
   }
 
-  public void setUserId(long userId) {
+  public void setUserId(int userId) {
     this.userId = userId;
   }
 
@@ -62,11 +91,11 @@ public class User {
   }
 
 
-  public long getUserGender() {
+  public int getUserGender() {
     return userGender;
   }
 
-  public void setUserGender(long userGender) {
+  public void setUserGender(int userGender) {
     this.userGender = userGender;
   }
 
@@ -97,17 +126,31 @@ public class User {
     this.createDate = createDate;
   }
 
-  public void setCreateDate(java.sql.Date createDate) {
-    this.createDate = createDate;
-  }
 
-
-  public long getUserRole() {
+  public int getUserRole() {
     return userRole;
   }
 
-  public void setUserRole(long userRole) {
+  public void setUserRole(int userRole) {
     this.userRole = userRole;
+  }
+
+
+  public String getUserAddress() {
+    return userAddress;
+  }
+
+  public void setUserAddress(String userAddress) {
+    this.userAddress = userAddress;
+  }
+
+
+  public String getUserAddress2() {
+    return userAddress2;
+  }
+
+  public void setUserAddress2(String userAddress2) {
+    this.userAddress2 = userAddress2;
   }
 
 }
