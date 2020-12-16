@@ -167,7 +167,7 @@
 <input type="hidden" name="bankfrom" value="" />
 <input type="hidden" name="yfx315" value="" />
 
-<input type="hidden" id="J_channelUrl" name="channel" value="no-detail" class="J_FareParam"/>
+<input type="hidden" id="J_channelUrl2" name="channel" value="no-detail" class="J_FareParam"/>
    <input type="hidden" id="J_actId" name="actId" value="" />
    <input type="hidden" name="etkv" value=""/>
    <input type="hidden" name="havePremium" value="false" />
@@ -206,15 +206,15 @@
    </div>
  </td>
 </tr>
-<c:forEach items="${products}" var="p">
+<c:forEach items="${orderCount}" var="p">
  <tr class="item" data-lineid="19614514619:31175333266:35612993875" data-pointRate="0">
  <td class="s-title">
   <%-- <a href="#" target="_blank" title="Huawei/华为 G520新款双卡双待安卓系统智能手机4.5寸四核手手机" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
      <img src="http://img03.taobaocdn.com/bao/uploaded/i3/18670026332876589/T1A4icFbNeXXXXXXXX_!!0-item_pic.jpg_60x60.jpg" class="itempic"><span class="title J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">Huawei/华为 G520新款双卡双待安卓系统智能手机4.5寸四核手手机</span></a>
 --%>
 
-      <a href="#" target="_blank" title="${p.productName}" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
-          <img src="${p.picturePath}" class="itempic"><span class="title J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">${p.productName}</span></a>
+      <a href="#" target="_blank" title="${p.product.productName}" class="J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">
+          <img src="${pageContext.request.contextPath}/images/${p.product.picturePath}" class="itempic"><span class="title J_MakePoint" data-point-url="http://log.mmstat.com/buy.1.5">${p.product.productName}</span></a>
 
       <div class="props">
     <%-- <span>机身颜色: 黑 </span>
@@ -232,21 +232,22 @@
  <td class="s-price">
    
   <span class='price '>
- <em class="style-normal-small-black J_ItemPrice"  >630.00</em>
+ <em class="style-normal-small-black J_ItemPrice"  >${p.product.productpresent}</em>
   </span>
 <input type="hidden" name="costprice" value="630.00" class="J_CostPrice" />
 </td>
  <td class="s-amount" data-point-url="">
-         <input type="hidden" class="J_Quantity" value="1" name="19614514619_31175333266_35612993875_quantity"/>1
+         <input type="hidden" class="J_Quantity" value="1" name="19614514619_31175333266_35612993875_quantity"/>${p.goodsNumber}
  
  </td>
  <td class="s-agio">
        <div class="J_Promotion promotion" data-point-url="">无优惠</div>
    </td>
  <td class="s-total">
-   
+
    <span class='price '>
- <em class="style-normal-bold-red J_ItemTotal "  >630.00</em>
+ <em class="style-normal-bold-red J_ItemTotal "  >${p.product.productpresent*p.goodsNumber}</em>
+
   </span>
     <input id="furniture_service_list_b_47285539868" type="hidden" name="furniture_service_list_b_47285539868"/>
  </td>
@@ -332,7 +333,8 @@
 <tr class="shop-total blue-line">
  <td colspan="5">店铺合计(<span class="J_Exclude" style="display: none">不</span>含运费<span class="J_ServiceText" style="display: none">，服务费</span>)：
    <span class='price g_price '>
- <span>&yen;</span><em class="style-middle-bold-red J_ShopTotal"  >630.00</em>
+ <%--<span>&yen;</span><em class="style-middle-bold-red J_ShopTotal"  >630.00</em>--%>
+ <span>&yen;</span><em class="style-middle-bold-red J_ShopTotal"  >${count}.00</em>
   </span>
   <input type="hidden" name="1704508670:2|creditcard" value="false" />
 <input type="hidden" id="J_IsLadderGroup" name="isLadderGroup" value="false"/>
@@ -352,15 +354,17 @@
  <div class="point-in">
    
    <em class="t">实付款：</em>  <span class='price g_price '>
- <span>&yen;</span><em class="style-large-bold-red"  id="J_ActualFee"  >630.00</em>
+ <span>&yen;</span><em class="style-large-bold-red"  id="J_ActualFee"  >${count}.00</em>
   </span>
 </div>
 
   <ul >
- <li><em>寄送至:</em><span id="J_AddrConfirm" style="word-break: break-all;">
+      <c:forEach items="${orders}" var="s">
+ <%--<li><em>寄送至:</em><span id="J_AddrConfirm" style="word-break: break-all;">
    湖北省 恩施土家族苗族自治州 恩施市 湖北民族学院（信息工程学院）  男生宿舍楼235栋1234202
-   </span></li>
- <li><em>收货人:</em><span id="J_AddrNameConfirm">某某某 18124317260 </span></li>
+   </span></li>--%>
+ <li><em>收货人:</em><span id="J_AddrNameConfirm">${s.userName}  (${s.phoneNumber}) </span></li>
+      </c:forEach>
  </ul>
      </div>
  </div>

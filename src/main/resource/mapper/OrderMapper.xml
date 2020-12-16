@@ -20,7 +20,6 @@
 
         <association property="order" javaType="cn.bdqn.pojo.Order" >
             <id property="orderId" column="Order_ID"></id>
-            <result property="orderNumber" column="Order_number"></result>
             <result property="orderPey" column="Order_pey"></result>
             <result property="orderPrice" column="Order_price"></result>
             <result property="orderState" column="Order_state"></result>
@@ -34,7 +33,7 @@
         <!--WHERE o.`Order_ID`=#{id} AND o.`Order_ID`=oi.`Order_id`-->
         <!--&lt;!&ndash; select * from order&ndash;&gt;-->
 
-        SELECT u.`userAddress`,u.`userAddress2`,u.`phone Number`,u.`userName`,o.*
+        SELECT u.`userAddress`,u.`userAddress2`,u.`phoneNumber`,u.`userName`,o.*
         FROM `user` u,`order` o
         WHERE u.`userId`=o.`userId`
         AND u.`userId`=#{id}
@@ -42,8 +41,46 @@
 
    <select id="getProduct" resultType="Product">
        select * from product
-       where productId=1
+       where productId in('1','2')
    </select>
+
+
+    <resultMap id="OrderItem" type="OrderItem">
+<!--
+        SELECT p.`picturePath`,p.`productName`,p.`productpresent`,oit.`Goods_number`
+        FROM `order` o,`order_item` oit,`product` p
+        WHERE o.`Order_ID`=oit.`Order_Id`
+        AND oit.`Goods_id`=p.`productId`-->
+        <result column="Goods_number" property="goodsNumber"></result>
+        <result property="orderId" column="Order_Id"></result>
+        <!--<result property="goodsId" column=""-->
+        <association property="product" javaType="cn.bdqn.pojo.Product">
+            <!--<result property="productId" column=""-->
+            <result property="productId" column="productId"></result>
+            <result property="picturePath" column="picturePath"/>
+            <result property="productName" column="productName"/>
+            <result property="productpresent" column="productpresent"/>
+
+        </association>
+
+        <association property="order" javaType="cn.bdqn.pojo.Order">
+            <result property="orderId" column="Order_ID"></result>
+
+        </association>
+    </resultMap>
+    <select id="getOrderCount" resultMap="OrderItem">
+         <!--SELECT p.`picturePath`,p.`productName`,p.`productpresent`,oit.`Goods_number`,oit.`Goods_total_price`,o.`Order_price`-->
+          <!--FROM `order` o,`order_item` oit,`product` p-->
+         <!--WHERE o.`Order_ID`=oit.`Order_Id`-->
+         <!--AND oit.`Goods_id`=p.`productId`-->
+
+
+        SELECT  P.productId,p.`picturePath`,p.`productName`,p.`productpresent`,oit.`Goods_number`,o.`Order_ID`,oit.`Order_Id`
+        FROM `order` o,`order_item` oit,`product` p
+        WHERE o.`Order_ID`=oit.`Order_Id`
+        AND oit.`Goods_id`=p.`productId`
+
+    </select>
 
 
 </mapper>

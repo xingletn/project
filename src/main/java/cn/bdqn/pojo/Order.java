@@ -4,27 +4,26 @@ package cn.bdqn.pojo;
 public class Order {
 
   private int orderId;
-  private String orderNumber;
   private int orderPey;
   private int userId;
   private double orderPrice;
   private int orderState;
   private User user;
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId=" + orderId +
-                ", orderNumber='" + orderNumber + '\'' +
-                ", orderPey=" + orderPey +
-                ", userId=" + userId +
-                ", orderPrice=" + orderPrice +
-                ", orderState=" + orderState +
-                ", user=" + user +
-                '}';
-    }
 
-    public User getUser() {
+  @Override
+  public String toString() {
+    return "Order{" +
+            "orderId=" + orderId +
+            ", orderPey=" + orderPey +
+            ", userId=" + userId +
+            ", orderPrice=" + orderPrice +
+            ", orderState=" + orderState +
+            ", user=" + user +
+            '}';
+  }
+
+  public User getUser() {
         return user;
     }
 
@@ -40,14 +39,6 @@ public class Order {
     this.orderId = orderId;
   }
 
-
-  public String getOrderNumber() {
-    return orderNumber;
-  }
-
-  public void setOrderNumber(String orderNumber) {
-    this.orderNumber = orderNumber;
-  }
 
 
   public int getOrderPey() {

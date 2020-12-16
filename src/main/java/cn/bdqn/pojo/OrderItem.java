@@ -10,7 +10,41 @@ public class OrderItem {
   private double goodsPrice;
   private int goodsNumber;
   private double goodsTotalPrice;
+  private Product product;//一会要获取商品名称，价格，商品价格
+//  private OrderItem orderItem;//要获取当先订单项中商品个数
+//  private int Order_price;//当前订单的总价格
+private Order order;
 
+  public Order getOrder() {
+    return order;
+  }
+
+  public void setOrder(Order order) {
+    this.order = order;
+  }
+
+  @Override
+  public String toString() {
+    return "OrderItem{" +
+            "orderItemId=" + orderItemId +
+            ", orderId=" + orderId +
+            ", goodsId=" + goodsId +
+            ", goodsName='" + goodsName + '\'' +
+            ", goodsPrice=" + goodsPrice +
+            ", goodsNumber=" + goodsNumber +
+            ", goodsTotalPrice=" + goodsTotalPrice +
+            ", product=" + product +
+            ", order=" + order +
+            '}';
+  }
+
+  public Product getProduct() {
+    return product;
+  }
+
+  public void setProduct(Product product) {
+    this.product = product;
+  }
 
   public int getOrderItemId() {
     return orderItemId;
