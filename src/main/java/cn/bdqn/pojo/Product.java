@@ -15,6 +15,16 @@ public class Product {
   private long productprice;
   private long productpresent;
 
+  private ProductClass productClass;
+
+  public ProductClass getProductClass() {
+    return productClass;
+  }
+
+  public void setProductClass(ProductClass productClass) {
+    this.productClass = productClass;
+  }
+
   private String picturePath;
 
 
@@ -148,6 +158,7 @@ public class Product {
             ", productPictureId=" + productPictureId +
             ", productprice=" + productprice +
             ", productpresent=" + productpresent +
+            ", productClass=" + productClass +
             ", picturePath='" + picturePath + '\'' +
             ", productPicture=" + productPicture +
             '}';

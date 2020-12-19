@@ -276,7 +276,7 @@
  </li>
  <li class="dib extra-info">
 
- <div class="shoparea">
+<%-- <div class="shoparea">
  <ul class="dib-wrap">
  <li class="dib title">店铺优惠：</li>
  <li class="dib sel"><div class="J_ShopPromo J_Promotion promotion clearfix" data-point-url="http://log.mmstat.com/buy.1.16"></div></li>
@@ -285,13 +285,13 @@
   </span>
 </li>
  </ul>
- </div>
+ </div>--%>
 
  <div class="shoppointarea"></div>
 
-   <div class="farearea">
+   <%--<div class="farearea">
  <ul class="dib-wrap J_farearea">
- <%--<li class="dib title">运送方式：</li>--%>
+ &lt;%&ndash;<li class="dib title">运送方式：</li>&ndash;%&gt;
  <li class="dib sel" data-point-url="http://log.mmstat.com/jsclick?cache=*&tyxd=wlysfs">
  <input type="hidden" name="1704508670:2|actualPaidFee" value="0" class="J_ActualPaidFee" />
  <input type="hidden" name="1704508670:2|codAllowMultiple" value="true"/>
@@ -299,7 +299,7 @@
  <input type="hidden" name="1704508670:2|codServiceFeeRate" value="" class="J_CodServiceFeeRate"/>
  <input type="hidden" name="1704508670:2|codPostFee" value="0" class="J_CodPostFee"/>
    <select name="1704508670:2|post" class="J_Fare">
-    <%-- <option data-fare="1500" value=" 2 " data-codServiceType="2" data-level=""  selected="selected"  >
+    &lt;%&ndash; <option data-fare="1500" value=" 2 " data-codServiceType="2" data-level=""  selected="selected"  >
  快递 15.00元 
  </option>
        <option data-fare="2500" value=" 7 " data-codServiceType="7" data-level=""  >
@@ -307,7 +307,7 @@
  </option>
        <option data-fare="1500" value=" 1 " data-codServiceType="1" data-level=""  >
  平邮 15.00元 
- </option>--%>
+ </option>&ndash;%&gt;
      </select>
    <em tabindex="0" class="J_FareFree" style="display: none">免邮费</em>
      </li>
@@ -316,7 +316,7 @@
   </span>
 </li>
  </ul>
- </div>
+ </div>--%>
    <div class="extra-area">
  <ul class="dib-wrap">
  <li class="dib title">发货时间：</li>

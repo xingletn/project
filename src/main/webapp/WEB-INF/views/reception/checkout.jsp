@@ -2,6 +2,41 @@
 <html>
 <head>
 <title>Checkout</title>
+
+	<style>
+		.plussub {
+			width:120px;
+			height:32px;
+			border:1px solid #ccc;
+			background:#fff;
+			margin:0 auto;
+			float:left;
+		}
+		.plussub span {
+			width:30px;
+			height:30px;
+			float:left;
+			text-align:center;
+			line-height:30px;
+			cursor:pointer;
+		}
+		.plussub .sub {
+			border-right:1px solid #ccc;
+		}
+		.plussub .plus {
+			border-left:1px solid #ccc;
+		}
+		.plussub input[type="text"] {
+			border:none;
+			height:30px;
+			width:56px;
+			text-align:center;
+			float:left;
+			line-height:30px;
+		}
+
+	</style>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -76,10 +111,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					   <div class="cart-item-info">
 						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
-						<ul class="qty">
-							<li><p>Size : 5</p></li>
-							<li><p>Qty : 1</p></li>
-						</ul>
+
+						   <%--商品数量加减--%>
+						   <div class="plussub">
+							   <span onclick="sub(1)" class="sub">-</span>
+							   <input class="yzquantity1" onblur="yzquantity(1)" type="text" value="1">
+							   <span onclick="plus(1)" class="plus">+</span>
+						   </div>
+
 							 <div class="delivery">
 							 <p>Service Charges : Rs.100.00</p>
 							 <span>Delivered in 2-3 business days</span>
@@ -154,4 +193,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    	</div>
    </div>
 </body>
+
+<script>
+	/*增加或删除数量*/
+	function sub(psid) {
+		var yzquantity = $(".yzquantity" + psid).val();
+		if (yzquantity > 0) {
+			if (yzquantity == 1) {
+				alert("已到达最小数量！");
+				return;
+			}
+			yzquantity--;
+			$(".yzquantity" + psid).val(yzquantity);
+		} else {
+			alert("请输入有效数量！");
+		}
+	}
+
+	function plus(psid) {
+		var yzquantity = $(".yzquantity" + psid).val();
+		if (yzquantity > 0) {
+			yzquantity++;
+			$(".yzquantity" + psid).val(yzquantity);
+		} else {
+			alert("请输入有效数量！");
+		}
+	}
+
+	function yzquantity(psid) {
+		var yzquantity = $(".yzquantity" + psid).val();
+		var reg = /^[0-9]*$/;
+		reg.test(yzquantity);
+		if (reg.test(yzquantity) == false) {
+			alert("请输入有效数量！");
+			$(".yzquantity" + psid).val(yzquantity);
+		}
+	}
+</script>
+
 </html>		

@@ -24,9 +24,8 @@ public interface OrderMapper {
     public Order findById(Integer id);
     *//** 5.根据id修改订单信息*//*
     public void updateById(Order order);
-
-
 */
+
     List<OrderItem> getOrderCount();
 
     List<User> getOrderList(Integer id);

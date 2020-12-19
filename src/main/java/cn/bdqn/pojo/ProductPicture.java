@@ -7,7 +7,15 @@ public class ProductPicture {
   private String productPicturePath01;
   private String productPicturePath02;
   private String productPicturePath03;
+  private String productPicturePath04;
 
+  public String getProductPicturePath04() {
+    return productPicturePath04;
+  }
+
+  public void setProductPicturePath04(String productPicturePath04) {
+    this.productPicturePath04 = productPicturePath04;
+  }
 
   public long getProductPictureId() {
     return productPictureId;
@@ -44,4 +52,14 @@ public class ProductPicture {
     this.productPicturePath03 = productPicturePath03;
   }
 
+  @Override
+  public String toString() {
+    return "ProductPicture{" +
+            "productPictureId=" + productPictureId +
+            ", productPicturePath01='" + productPicturePath01 + '\'' +
+            ", productPicturePath02='" + productPicturePath02 + '\'' +
+            ", productPicturePath03='" + productPicturePath03 + '\'' +
+            ", productPicturePath04='" + productPicturePath04 + '\'' +
+            '}';
+  }
 }

@@ -92,10 +92,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="h_nav">
 										<h4>Men</h4>
 										<ul>
-											<li><a href="/reception/Men1?id=Watches">Watches</a></li>
+											<li><a href="/reception/Men?id=1">Watches</a></li>
 											<%--<li><a href="men.jsp">Watches</a></li>--%>
-											<li><a href="/reception/Men2?id=Accessories">Accessories</a></li>
-											<li><a href="/reception/Men3?id=Suits">Suits</a></li>
+											<li><a href="/reception/Men?id=2">Accessories</a></li>
+											<li><a href="/reception/Men?id=3">Suits</a></li>
 											<li><a href="/reception/men">Blazers</a></li>
 											<li><a href="/reception/men">Trousers</a></li>
 											<li><a href="/reception/men">Jeans</a></li>
@@ -110,9 +110,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="h_nav">
 										<h4>Women</h4>
 										<ul>
-											<li><a href="/reception/men">Watches</a></li>
-											<li><a href="/reception/men">Outerwear</a></li>
-											<li><a href="/reception/men">Dresses</a></li>
+											<li><a href="/reception/Women?id=6">Watches</a></li>
+											<li><a href="/reception/Women?id=9">Outerwear</a></li>
+											<li><a href="/reception/Women?id=10">Dresses</a></li>
 											<li><a href="/reception/men">Handbags</a></li>
 											<li><a href="/reception/men">Trousers</a></li>
 											<li><a href="/reception/men">Jeans</a></li>
@@ -174,10 +174,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="h_nav">
 										<h4>Men</h4>
 										<ul>
-											<li><a href="/reception/men">Watches</a></li>
+											<li><a href="/reception/Men?id=1">Watches</a></li>
 											<%--<li><a href="men.jsp">Watches</a></li>--%>
-											<li><a href="/reception/men">Accessories</a></li>
-											<li><a href="/reception/men">Suits</a></li>
+											<li><a href="/reception/Men?id=2">Accessories</a></li>
+											<li><a href="/reception/Men?id=3">Suits</a></li>
 											<li><a href="/reception/men">Blazers</a></li>
 											<li><a href="/reception/men">Trousers</a></li>
 											<li><a href="/reception/men">Jeans</a></li>
@@ -192,9 +192,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="h_nav">
 										<h4>Women</h4>
 										<ul>
-											<li><a href="/reception/men">Watches</a></li>
-											<li><a href="/reception/men">Outerwear</a></li>
-											<li><a href="/reception/men">Dresses</a></li>
+											<li><a href="/reception/Women?id=6">Watches</a></li>
+											<li><a href="/reception/Women?id=9">Outerwear</a></li>
+											<li><a href="/reception/Women?id=10">Dresses</a></li>
 											<li><a href="/reception/men">Handbags</a></li>
 											<li><a href="/reception/men">Trousers</a></li>
 											<li><a href="/reception/men">Jeans</a></li>

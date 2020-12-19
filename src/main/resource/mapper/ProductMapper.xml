@@ -3,23 +3,46 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.bdqn.mapper.ProductMapper">
-    <select id="getSuitList" resultType="cn.bdqn.pojo.Product">
+   <!-- <select id="getSuitList" resultType="cn.bdqn.pojo.Product">
        SELECT * FROM product p ,product_picture pp
         WHERE p.productPictureID=pp.Product_PictureID
         AND `productClass_id`=3
+    </select>-->
+
+    <resultMap id="WatchList" type="Product">
+        <result property="productClassId" column="product_Class_id"></result>
+        <result property="productPictureId" column="productPictureID"></result>
+        <result property="productpresent" column="productpresent"></result>
+        <result property="picturePath" column="picturePath"></result>
+        <!--<result property=""-->
+        <association property="productClass" javaType="cn.bdqn.pojo.ProductClass">
+            <result property="productClassId" column="Product_Class_ID"></result>
+            <result property="productClassName" column="Product_Class_Name"></result>
+        </association>
+    </resultMap>
+
+    <select id="getWatchList" resultMap="WatchList">
+        <!--SELECT p.productName,p.productText, p.productBrand,p.productlsWishList,p.productlsHaveGoods,p.productCount,p.,p.productPictureID,p.productpresent,p.picturePath,p.productPictureID-->
+        <!--FROM `product` p,`product_class` c-->
+        <!--WHERE p.`product_Class_id`=c.`Product_Class_id`-->
+        <!--AND p.`product_Class_id`=#{id}-->
+        <!--SELECT *
+        FROM `product` p,`product_class` c
+        WHERE p.product_Class_id=c.Product_Class_ID
+        AND p.`product_Class_id`=#{id}-->
+
+
+        SELECT p.`productName`,p.`product_Class_id`,p.`productPictureID`,p.`productpresent`,p.`picturePath`,c.`Product_Class_ID`,c.`Product_Class_Name`
+        FROM `product` p,`product_class` c
+        WHERE p.product_Class_id=c.Product_Class_ID
+        AND p.`product_Class_id`=#{id}
     </select>
 
-    <select id="getWatchList" resultType="cn.bdqn.pojo.Product">
-       SELECT * FROM product p ,product_picture pp
-        WHERE p.productPictureID=pp.Product_PictureID
-        AND `productClass_id`=1
-    </select>
-
-    <select id="getJewelryList" resultType="cn.bdqn.pojo.Product">
+    <!--<select id="getJewelryList" resultType="cn.bdqn.pojo.Product">
         SELECT * FROM product p ,product_picture pp
         WHERE p.productPictureID=pp.Product_PictureID
         AND `productClass_id`=2
-    </select>
+    </select>-->
 
 
     <resultMap id="getgoods" type="cn.bdqn.pojo.Product">
@@ -35,18 +58,56 @@
     <select id="getGoodsList" resultMap="getgoods">
        SELECT * FROM product p ,product_picture pp
         WHERE p.productPictureID=pp.Product_PictureID
-        AND Product_PictureID=#{id}
+        AND p.productPictureID=#{id}
     </select>
 
 
-<!--    <select id="getOrderList" resultType="cn.bdqn.pojo.Order">
+    <!--查询女士手表-->
+    <select id="getWlist" resultType="womanproduct">
+        select  * from womanproduct where WproductClass_id=#{id};
+    </select>
+    <!--查询女士外套-->
+    <!--    <select id="getWlist1" resultType="womanproduct">-->
+    <!--        select  * from womanproduct where WproductClass_id=4;-->
+    <!--    </select>-->
+    <!--    &lt;!&ndash;查询女士礼服&ndash;&gt;-->
+    <!--    <select id="getWlist2" resultType="womanproduct">-->
+    <!--        select  * from womanproduct where WproductClass_id=5;-->
+    <!--    </select>-->
+    <!--查看商品详细信息-->
+    <select id="getWlist3" resultType="cn.bdqn.pojo.Womanproduct">
+        select * from womanproduct where WproductId=#{id};
+    </select>
 
-        &lt;!&ndash; SELECT o.*,oi.* FROM `order` o,`order_item` oi
-           WHERE o.`Order_ID`=#{id} AND o.`Order_ID`=oi.`Order_id`&ndash;&gt;
-
-        select * from order
-
-    </select>-->
+    <select id="getWlist4" resultType="cn.bdqn.pojo.Related">
+        SELECT r.*
+        FROM womanproduct w,`related` r
+        WHERE w.`related`=r.relatedId
+        AND w.`WproductClass_id`=#{wproductClassId}
+        AND r.`relatedId`=#{relatedId}
+    </select>
+    <!--添加到购物车-->
+    <insert id="addshopping">
+        insert  into  shopping_cart(Goods_name,Goods_price,Goods_picturePath)
+        values (#{wproductName},#{wproductprice},#{picturePath});
+    </insert>
+    <insert id="addcart">
+        insert into shopping_cart(Goods_name,Goods_price,Goods_picturePath)
+        values (#{kname},#{kprice},#{kpicturePath});
+    </insert>
+    <!--查询购物车里的商品-->
+    <select id="getshoppingall" resultType="cn.bdqn.pojo.ShoppingCart">
+        select * from shopping_cart;
+    </select>
+    <!--删除购物车的购物项-->
+    <delete id="delshopping">
+        delete from shopping_cart where GoodsCarid=#{id}
+    </delete>
+    <!--价格筛选-->
+    <select id="getWproductprice" resultType="cn.bdqn.pojo.Womanproduct">
+        SELECT * FROM womanproduct WHERE WproductClass_id=#{id}
+        and Wproductprice&gt;=#{price1} AND Wproductprice&lt;=#{price2};
+    </select>
 
 
 </mapper>

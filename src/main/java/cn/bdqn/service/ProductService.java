@@ -2,8 +2,7 @@ package cn.bdqn.service;
 
 import cn.bdqn.mapper.OrderMapper;
 import cn.bdqn.mapper.ProductMapper;
-import cn.bdqn.pojo.Product;
-import cn.bdqn.pojo.User;
+import cn.bdqn.pojo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,17 +21,17 @@ public class ProductService {
     @Autowired
     OrderMapper mapper;
 
-    public List<Product> getSuitList() {
+    /*public List<Product> getSuitList() {
         return productMapper.getSuitList();
+    }*/
+
+    public List<Product> getWatchList(Integer id) {
+        return productMapper.getWatchList(id);
     }
 
-    public List<Product> getWatchList() {
-        return productMapper.getWatchList();
-    }
-
-    public List<Product> getJewelryList() {
+    /*public List<Product> getJewelryList() {
         return productMapper.getJewelryList();
-    }
+    }*/
 
     public List<Product> getGoodsList(Integer id) {
         return productMapper.getGoodsList(id);
@@ -44,5 +43,44 @@ public class ProductService {
 
     public List<Product> getProduct(Integer pid) {
         return mapper.getProduct(pid);
+    }
+
+    public List<Womanproduct> getWlist(Integer id) {
+        return productMapper.getWlist(id);
+    }
+
+
+    public List<Womanproduct> getWlist3(String id) {
+        return productMapper.getWlist3(id);
+    }
+
+
+    public boolean addshopping(Womanproduct womanproduct) {
+        return productMapper.addshopping(womanproduct)>0?true:false;
+    }
+
+
+    public boolean addcart(Related related) {
+        return productMapper.addcart(related)>0?true:false;
+    }
+
+
+    public List<ShoppingCart> getshoppingall() {
+        return productMapper.getshoppingall();
+    }
+
+
+    public boolean delshopping(Integer id) {
+        return productMapper.delshopping(id)>0?true:false;
+    }
+
+
+    public List<Womanproduct> getWproductprice(Integer id, Integer price1, Integer price2) {
+        return productMapper.getWproductprice(id,price1,price2);
+    }
+
+
+    public List<Related> getWlist4(Integer wproductClassId, Integer relatedId) {
+        return productMapper.getWlist4(wproductClassId,relatedId);
     }
 }

@@ -6,7 +6,6 @@
 
     <resultMap id="OrderList" type="Order">
         <id property="orderId" column="Order_ID"></id>
-        <result property="orderNumber" column="Order_number"></result>
         <result property="orderPey" column="Order_pey"></result>
         <result property="orderPrice" column="Order_price"></result>
         <result property="orderState" column="Order_state"></result>

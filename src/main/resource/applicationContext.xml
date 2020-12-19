@@ -81,4 +81,6 @@
         <aop:pointcut id="txPointcut" expression="execution(* cn.bdqn.service..*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config>
+
+
 </beans>

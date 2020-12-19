@@ -12,8 +12,6 @@
         <!--<setting name="autoMappingBehavior" value="FULL"/>-->
     </settings>
 
-
-
     <typeAliases>
         <package name="cn.bdqn.pojo"/>
     </typeAliases>
